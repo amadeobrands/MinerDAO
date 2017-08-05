@@ -11,7 +11,7 @@ contract MiningDAO {
         if(amount >= 0.2 ether) {
             for(uint x = 0; x < investors.length; x++) {
                 if (!investors[x].send(amount)) {
-                   throw;
+                   revert();
                 }
             }
         }
